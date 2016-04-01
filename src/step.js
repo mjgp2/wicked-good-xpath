@@ -361,8 +361,8 @@ wgxpath.Step.Axis = {
         var testName = test.getName();
         // IE8 doesn't allow access to the style attribute using getNamedItem.
         // It returns an object with nodeValue = null.
-        if (testName == 'style' && node.style &&
-            wgxpath.userAgent.IE_DOC_PRE_9) {
+        if (testName == 'style' &&
+            wgxpath.userAgent.IE_DOC_PRE_9 && node.style) {
           nodeset.add(wgxpath.IEAttrWrapper.forStyleOf(
               /** @type {!Node} */ (node), node.sourceIndex));
           return nodeset;
