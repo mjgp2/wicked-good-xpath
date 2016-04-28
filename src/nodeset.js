@@ -128,8 +128,8 @@ wgxpath.NodeSet.merge = function(a, b) {
       bCurr = bCurr.next;
     } else {
       var compareResult = goog.dom.compareNodeOrder(
-          /** @type {!Node} */ (aCurr.node),
-          /** @type {!Node} */ (bCurr.node));
+          /** @type {!Node} */ (aCurr.node.ownerElement||aCurr.node),
+          /** @type {!Node} */ (bCurr.node.ownerElement||bCurr.node));
       if (compareResult > 0) {
         next = bCurr;
         bCurr = bCurr.next;
